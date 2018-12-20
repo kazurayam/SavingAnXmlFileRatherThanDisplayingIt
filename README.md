@@ -2,7 +2,7 @@ Saving an XML file rather than displaying it
 ====
 
 This is a small Katalon Studio project for demonstration purpose.
-You can download the zip from [Releases] page, unzip it, open the project with
+You can download the zip from [Releases](https://github.com/kazurayam/SavingAnXmlFileRatherThanDisplayingIt/releases) page, unzip it, open the project with
 your Katalon Studio.
 
 This project was developed using Katalon Studio 5.10.0.
