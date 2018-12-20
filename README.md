@@ -29,13 +29,13 @@ I want to download the XML and save it into a local file.
 
 
 I made a TestObject named `a_FIFA World Cup Russia 2018`
-![testObject](docs\images\testObject.png)
+![testObject](docs/images/testObject.png)
 This test object has a xpath
 ```
 //div[@id='rssTab']//a[text()='FIFA World Cup Russia 2018']
 ```
 
-I wrote a test case [TC1](Scripts\TC1\Script1545272253488.groovy)
+I wrote a test case [TC1](Scripts/TC1/Script1545272253488.groovy)
 ```
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
@@ -90,6 +90,6 @@ file.toFile().write(content)
 ```
 
 I ran this test case and got a XML file saved in `<projectdir>/tmp/FIFA_World_Cup_Russia_2018.rss.xml`
-![xml_saved](docs\images\xml_saved.png)
+![xml_saved](docs/images/xml_saved.png)
 
 This worked for me.
