@@ -13,6 +13,14 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import com.kms.katalon.core.testobject.ConditionType as ConditionType
+import com.kms.katalon.core.testobject.RestRequestObjectBuilder
+import com.kms.katalon.core.testobject.TestObjectProperty as TestObjectProperty
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import java.nio.file.Paths
+import java.nio.file.Path
+import com.kms.katalon.core.configuration.RunConfiguration
+import java.nio.file.Files
 
 def anchorElement = findTestObject('Object Repository/Page_RSS Feeds - FIFA.com/a_FIFA World Cup Russia 2018')
 
@@ -21,9 +29,32 @@ WebUI.setViewPortSize(800, 600)
 WebUI.navigateToUrl('http://static.fifa.com/rss-feeds/index.html')
 WebUI.scrollToElement(anchorElement, 3, FailureHandling.STOP_ON_FAILURE)
 WebUI.verifyElementPresent(anchorElement, 10, FailureHandling.STOP_ON_FAILURE)
-
+// identify URL of the XML document
 def href = WebUI.getAttribute(anchorElement, "href")         // will get href="http://static.fifa.com/worldcup/news/rss.xml"
-
 WebUI.closeBrowser()
+
+// Create a new GET object using builder'
+def builder = new RestRequestObjectBuilder()
+def requestObject = builder
+	.withRestRequestMethod("GET")
+	.withRestUrl(href)
+	.build()
+	
+// Send a request'
+def response = WS.sendRequest(requestObject)
+
+// Verify if the response from the URL returns the 200 status code'
+WS.verifyResponseStatusCode(response, 200)
+
+// Get the content string
+def content = response.getResponseBodyContent()
+
+// prepare output directory
+Path projectdir = Paths.get(RunConfiguration.getProjectDir())
+Path outputdir = projectdir.resolve("tmp")
+Files.createDirectories(outputdir)
+Path file = outputdir.resolve("FIFA_World_Cup_Russia_2018.rss.xml")
+
+file.toFile().write(content)
 
 
