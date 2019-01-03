@@ -93,3 +93,7 @@ I ran this test case and got a XML file saved in `<projectdir>/tmp/FIFA_World_Cu
 ![xml_saved](docs/images/xml_saved.png)
 
 This worked for me.
+
+## Further study Jan/2019
+
+https://kazurayam.github.io/SavingAnXmlFileRatherThanDisplayingIt/
