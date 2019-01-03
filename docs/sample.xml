@@ -1,0 +1,24 @@
+<soapenv:Envelope xmlns:ser="http://xmlns.oracle.com/Enterprise/HCM/services" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header>
+    <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+      <wsse:UsernameToken wsu:Id="UsernameToken-*****">
+        <wsse:Username>*****</wsse:Username>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">*****</wsse:Password>
+        <wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">*****</wsse:Nonce>
+        <wsu:Created>2018-11-16T14:45:51.536Z</wsu:Created>
+      </wsse:UsernameToken>
+    </wsse:Security>
+  </soapenv:Header>
+  <soapenv:Body>
+    <ser:FIU_EDUNAV_SC_REQ>
+      <ser:AuthToken>*****</ser:AuthToken>
+      <ser:ShoppingCart_XML_Request><![CDATA[<?xml version="1.0"?>
+      <SCC_SC_CLEARCART_REQ xmlns="http://xmlns.oracle.com/Enterprise/HCM/services">
+      <SHOPPING_CART>
+      <SCC_SHOP_CART_TYPE>COURSE</SCC_SHOP_CART_TYPE>
+      </SHOPPING_CART>
+      </SCC_SC_CLEARCART_REQ>]]></ser:ShoppingCart_XML_Request>
+    </ser:FIU_EDUNAV_SC_REQ>
+  </soapenv:Body>
+</soapenv:Envelope>
+
