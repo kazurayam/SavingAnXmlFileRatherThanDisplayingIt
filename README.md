@@ -96,4 +96,9 @@ This worked for me.
 
 ## Further study Jan/2019
 
-https://kazurayam.github.io/SavingAnXmlFileRatherThanDisplayingIt/ continues
+I created a URL as a testbed for this discussion:
+- https://kazurayam.github.io/SavingAnXmlFileRatherThanDisplayingIt/
+
+I added "Test Cases/TC2" to answer to yolanda_moya
+
+I added "Test Cases/TC3" to answer to yolanda_moya again
